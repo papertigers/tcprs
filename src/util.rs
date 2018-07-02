@@ -1,7 +1,8 @@
 const DEFAULT_UNIT: f64 = 1024_f64;
 const SUFFIX: &'static [&'static str] = &["kB", "M", "G", "T", "P", "E"];
 
-pub fn pretty_bytes(b: u64) -> String {
+/// Takes the number of bytes and converts it to a human readable string
+pub(crate) fn pretty_bytes(b: u64) -> String {
     let b = b as f64;
 
     if b < DEFAULT_UNIT {
